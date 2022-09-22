@@ -1,0 +1,489 @@
+@charset "UTF-8";
+/*各htmlごとのcss*/
+/*onlinelive_top.html*/
+.onlinelive_wrapper:before{
+    content:"";
+    display:block;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+    width:100%;
+    height:100vh;
+    background:url(../images/onlinelive.jpg) center no-repeat;
+    background-size:cover;
+}
+
+/*トップの部分*/
+.space01 {
+    margin: 0;
+    height: 100vh;
+    position: relative;
+}
+.onlive_top {
+  position: absolute;
+  top: 55vh;
+  right: 10vh;
+  text-align: right;
+  color: whitesmoke;
+  font-weight: normal;
+}
+.onlive_top h1 {
+    font-size: 60px;
+}
+.onlive_top h2 {
+  font-size: 20px;
+  margin-top: 0;
+  padding-bottom: 20px;
+}
+/*ここまで*/
+
+/*各コンテンツ共通部分*/
+.onlive_all_contents {
+    margin-bottom: 0px;/*コンテンツ間の余白を無くす*/
+    padding-bottom: 30px;
+    width: 100%;
+    height: auto;
+}
+.onlive_script {
+    overflow: auto;/*回り込みを続ける*/
+}
+.onlive_script > p{
+    margin-top: 0;
+}
+
+/*floatは高さを無視するため、画像を大きくしすぎると配置がずれる*/
+/*応急処置のようだが、その際は、pタグを何個か連続させてdivの高さを延ばす。*/
+/*そして、pタグのcolorをtransparentにして透明にする*/
+
+.onlive_all_contents img {
+    width: 50%;  
+    height: auto;
+    float: left;
+    margin: 30px 50px 10px 10px;
+
+}
+
+
+.onlive_all_contents  h2 {
+    margin-top: 0px;/*コンテンツ間の余白を無くす*/
+    padding-top: 30px;
+}
+.onlive_all_contents span{
+    border-bottom: solid;/*企画名に下線*/
+}
+  
+/*各コンテンツ個別変更*/
+/*01*/
+#onlive_contents01 {
+    background-color:rgba(255, 255, 255, 0.9);
+}
+#onlive_contents01 > h1{
+    text-align: center;
+    padding-top: 30px;
+    border-bottom: solid;
+    border-color: gray;
+}
+#onlive_contents01 span{
+    color: black;
+}
+/*02*/
+#onlive_contents02 {
+    color: white;
+    background-color: rgba(122, 131, 160, 0.438);
+}
+/*03*/
+/*#onlive_contents03{
+    background-color:rgba(255, 255, 255, 0.9);
+}
+#onlive_contents03 {
+    color: black;
+    padding-left: 0;
+    padding-right: 0;
+}*/
+/*04*/
+#onlive_contents04 {
+    background-color:rgba(255, 255, 255, 0.9);
+    /*background-color: rgba(122, 131, 160, 0.438);*/
+    margin-bottom: 20vh;
+}
+#onlive_contents04 {
+    /*color: white;*/
+    color: black;
+}
+/*ボタンの見た目調整(すごい長いです) 引用サイト:*/
+.btn,
+a.btn,
+button.btn {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 0.5rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.3em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn-gradient {
+  font-weight: normal;
+
+  color: #fff;
+  border-radius: 0;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(40%, #ff3cac),
+    to(#562b7c)
+  );
+  background-image: -webkit-linear-gradient(left, #ff3cac 40%, #562b7c 100%);
+  background-image: linear-gradient(90deg, #ff3cac 40%, #562b7c 100%);
+}
+
+a.btn-gradient:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  content: "";
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff3cac),
+    color-stop(#562b7c),
+    to(#2b86c5)
+  );
+
+  background-image: -webkit-linear-gradient(left, #ff3cac, #562b7c, #2b86c5);
+
+  background-image: linear-gradient(90deg, #ff3cac, #562b7c, #2b86c5);
+}
+
+a.btn-gradient span {
+  position: relative;
+  z-index: 1;
+}
+
+a.btn-gradient:hover {
+  color: #fff;
+}
+
+a.btn-gradient:hover:after {
+  opacity: 0;
+}
+
+/*スマートフォン向けCSS*/
+@media(max-width:767px){
+
+/*ヘッダの表示*/
+header {
+    vertical-align: top;
+}
+
+.menu ul{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.menu li{
+    font-size: medium;
+}
+
+/*アコーディオン（ハンバーガー）が正常に出来た場合はwidthにサイズを入れる*/
+.logo img{
+    width: 70px;
+    margin: 8px 0 0 10px;
+
+}
+.logo {
+    text-align: center;
+}
+
+
+/*スケジュール表位置*/
+.time_schedule > ul {
+    display: block;
+}
+
+.time_schedule > ul > li{
+    width: 80%;
+    margin-left: 40px;
+    padding-right: 0;
+    text-align: left;
+    margin-right: 0;
+}
+
+
+/*SNSアイコンの大きさ調整*/
+.SNS img{
+    width: 55px;
+    height: auto;
+}
+.copy-right{
+    font-size: 12px;
+}
+
+/*ハンバーガーメニューの作成*/
+/* <参考>https://www.asobou.co.jp/blog/web/css-menu   */
+
+.hamburger-menu {
+    display: inline-block;
+    margin:0px;
+}
+/*文字色*/
+.hamburger-menu .menu-content a:link {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.hamburger-menu .menu-content a:visited {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.hamburger-menu .menu-content a:hover {
+    color: #7b8dac;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hamburger-menu .menu-content a:active {
+    color: #5a9bc0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*文字サイズ*/
+.hamburger-menu .menu-content ul {
+    font-size: medium;
+}
+
+/**/
+
+.menu {
+    display: none;
+}
+
+.menu-btn {
+    position: fixed;
+    top: 25px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: black;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: gray;
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+/*2021_1021 SNSアイコン追加*/
+.menu-content ul li img {
+    height: 35px;
+    width: 35px;
+}
+
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content {
+    width: 95%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: gray;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
+}
+
+
+
+/*LIVE配信用レスポンシブ*/
+/*以下共通変更*/
+/*LIVE配信の部分*/
+.onlinelive_wrapper:before{
+    content:"";
+    display:block;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+    height: 100vh;
+    background:url(../images/onlinelive.jpg) no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+.space01 {
+    height: 100vh;
+}
+
+.onlive_top {
+    position: absolute;
+    text-align: right;
+    margin: 0%;
+    top: 68vh;
+    right: 2vh;
+    opacity: 0.9;
+}
+.onlive_top h1{
+    font-size: 34px;
+    margin-bottom: 0;
+}
+.onlive_top h2{
+    font-size: 12px;
+    margin-top: 0;
+    padding-bottom: 20px;
+}
+/**/
+#onlive_contents01 h2, p{
+    position: relative;
+    left: 10%;
+    width: 80%;
+}
+#onlive_contents02 h2, p{
+    position: relative;
+    left: 10%;
+    width: 80%;
+}
+#onlive_contents03 {
+    color: black;
+    padding-left: 0;
+}
+#onlive_contents03 h2, p{
+    position: relative;
+    left: 10%;
+    width: 80%;
+}
+#onlive_contents04 h2, p{
+    position: relative;
+    left: 10%;
+    width: 80%;
+    padding-bottom: 10px;
+}
+.btn{
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%
+}
+
+.onlive_all_contents {
+    text-align: left;
+    padding-left:0px;
+}
+.onlive_all_contents img{
+    position: relative;
+    left: 8%;
+    width: 80%;
+    /*画像位置ここで調整*/
+}
+.onlive_script {
+    clear: left;
+}
+/*以下各コンテンツ個別変更*/
+
+}
